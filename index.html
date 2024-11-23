@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт-визитка IT-специалиста</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="image/logo.jpeg" alt="Логотип" class="logo">
+        <div class="header-text">
+            <h1>Печень И.</h1>
+            <p>Специалист в области информационной безопасности</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>Обо мне</h2>
+            <img src="image/photo.jpeg" alt="Фото профиля" class="profile-photo">
+            <p>Являюсь IT-специалистом с опытом работы в веб-разработке, сетевой безопасности и аналитике данных. Стремлюсь внедрять инновационные решения в различных проектах.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Навыки</h2>
+            <ul>
+                <li>Веб-разработка</li>
+                <li>Сетевая безопасность</li>
+                <li>Аналитика данных</li>
+                <li>Машинное обучение</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Контакты</h2>
+            <p>Email: <a href="mailto:example@mail.ru">example@mail.ru</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/example">linkedin.com/in/example</a></p>
+        </section>
+
+        <div class="container">
+            <button id="toggleButton">Показать изображение</button>
+            <div id="hiddenImage" class="hidden">
+                <img src="image/button.jpg" alt="Дополнительное изображение" class="extra-image">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
