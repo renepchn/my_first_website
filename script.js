@@ -1,10 +1,8 @@
-document.getElementById('toggleButton').addEventListener('click', function() {
-    const hiddenImage = document.getElementById('hiddenImage');
-    if (hiddenImage.classList.contains('hidden')) {
-        hiddenImage.classList.remove('hidden');
-        this.textContent = 'Скрыть изображение';
-    } else {
-        hiddenImage.classList.add('hidden');
-        this.textContent = 'Показать изображение';
-    }
-});
+function showPage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+        page.style.display = 'none'; // Скрываем все страницы
+    });
+
+    document.getElementById(pageId).style.display = 'block'; // Показываем только нужную страницу
+}
