@@ -1,3 +1,10 @@
+<?php
+if (!isset($_COOKIE['User'])) {
+    // Если куки нет, предложим пользователю авторизоваться или зарегистрироваться
+    echo '<p> <a href="/registration.php">Зарегистрируйтесь</a> или <a href="/login.php">войдите</a>, чтобы просматривать контент!</p>';
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
