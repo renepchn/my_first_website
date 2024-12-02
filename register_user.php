@@ -1,11 +1,10 @@
 <?php
-// Здесь должно быть подключение к базе данных
+require_once('db.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    // Пример простой вставки в базу данных
-    $conn = new mysqli("localhost", "root", "kali", "my_database_name");
+        $conn = new mysqli("localhost", "root", "kali", "my_database_name");
     if ($conn->connect_error) {
         die("Ошибка подключения: " . $conn->connect_error);
     }

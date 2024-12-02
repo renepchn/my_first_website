@@ -1,5 +1,5 @@
 <?php
-// Здесь должно быть подключение к базе данных
+require_once('db.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($password, $row['password'])) {
-            setcookie('User', $username, time() + (86400 * 30), "/"); // Устанавливаем куки на 30 дней
+            setcookie('User', $username, time() + (86400 * 30), "/"); 
             header("Location: index.php");
             exit();
         } else {
