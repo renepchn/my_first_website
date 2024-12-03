@@ -26,6 +26,11 @@ body {
     background-color: #707070; 
 }
 
+
+.navbar button:focus {
+    outline: 2px solid #fff; 
+}
+
 .page {
     padding: 20px;
     text-align: left;
@@ -88,4 +93,26 @@ form button {
 
 form button:hover {
     background-color: #707070;
+}
+
+@media (max-width: 600px) {
+    .navbar button {
+        padding: 8px 15px;
+        margin: 0 2px;
+    }
+
+    .page {
+        padding: 15px;
+    }
+
+    .content img {
+        max-width: 100%; 
+        float: none;     
+        display: block;  
+        margin: 0 auto;  
+    }
+    
+    form {
+        max-width: 90%;  
+    }
 }
