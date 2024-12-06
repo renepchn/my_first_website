@@ -1,17 +1,17 @@
 <?php
-require_once('db.php');
+require_once('db.php'); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
 
     $conn = new mysqli($servername, $username, $password, $dbName);
+    
     if ($conn->connect_error) {
-        die("Ошибка подключения: " . $conn->connect_error);
+        die("Connection failed: " . $conn->connect_error);
     }
 
     $username = $conn->real_escape_string($username);
-
     $sql = "SELECT password FROM users WHERE username='$username'";
     $result = $conn->query($sql);
 
@@ -49,5 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br>
         <button type="submit">Войти</button>
     </form>
+    <p>Нет аккаунта? <a href="register_user.php">Зарегистрируйтесь здесь.</a></p>
 </body>
 </html>

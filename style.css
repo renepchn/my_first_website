@@ -1,12 +1,10 @@
-
 body {
-    font-family: Arial, sans-serif; 
-    background-color: #f4f4f4; 
-    color: #333; 
-    margin: 0; 
-    padding: 0; 
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
-
 
 .navbar {
     background-color: #4CAF50; 
@@ -29,7 +27,6 @@ body {
     background-color: #2e6e31; 
 }
 
-
 .page {
     display: none; 
     padding: 20px; 
@@ -41,14 +38,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
-
 .content img {
     float: right; 
     max-width: 150px; 
     margin-left: 20px; 
     border-radius: 8px; 
 }
-
 
 form {
     max-width: 400px; 
@@ -88,7 +83,6 @@ form button:hover {
     background-color: #3e8e41; 
 }
 
-
 ul {
     list-style-type: none; 
     padding: 0; 
@@ -97,7 +91,6 @@ ul {
 li {
     margin-bottom: 20px; 
 }
-
 
 @media (max-width: 600px) {
     .navbar button {

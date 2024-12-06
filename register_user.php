@@ -1,23 +1,26 @@
 <?php
-require_once('db.php');
+require_once('db.php'); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $username = trim($_POST['username']);
+    $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
 
     $conn = new mysqli($servername, $username, $password, $dbName);
+    
     if ($conn->connect_error) {
-        die("Ошибка подключения: " . $conn->connect_error);
+        die("Connection failed: " . $conn->connect_error);
     }
 
+    
     $username = $conn->real_escape_string($username);
 
+    
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     if ($conn->query($sql) === TRUE) {
         header("Location: login_user.php");
         exit();
     } else {
-        echo "Ошибка: " . $conn->error;
+        echo "Error: " . $conn->error;
     }
 
     $conn->close();
@@ -41,5 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br>
         <button type="submit">Зарегистрироваться</button>
     </form>
+    <p>Уже есть аккаунт? <a href="login_user.php">Войдите здесь.</a></p>
 </body>
 </html>
