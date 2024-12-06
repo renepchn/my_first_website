@@ -1,3 +1,24 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "kali";
+$dbName = "my_database_name";
+
+$link = mysqli_connect($servername, $username, $password);
+
+if (!$link) {
+    die("Ошибка подключения: " . mysqli_connect_error());
+}
+
+$sql = "CREATE DATABASE IF NOT EXISTS $dbName";
+if (!mysqli_query($link, $sql)) {
+    echo "Не удалось создать БД: " . mysqli_error($link);
+}
+
+mysqli_close($link);
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -11,6 +32,8 @@
         <button onclick="showPage('home')">Главная</button>
         <button onclick="showPage('projects')">Проекты</button>
         <button onclick="showPage('contacts')">Контакты</button>
+        <button onclick="window.location.href='register_user.php'">Регистрация</button>
+        <button onclick="window.location.href='login_user.php'">Авторизация</button>
     </div>
 
     <div id="home" class="page">
@@ -42,7 +65,6 @@
         </div>
     </div>
 
-    <!-- Include JavaScript here -->
     <script src="script.js"></script>
 </body>
 </html>

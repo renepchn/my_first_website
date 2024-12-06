@@ -12,18 +12,11 @@ if (!$link) {
 }
 
 $sql = "CREATE DATABASE IF NOT EXISTS $dbName";
-
 if (!mysqli_query($link, $sql)) {
     echo "Не удалось создать БД: " . mysqli_error($link);
 }
 
-mysqli_close($link);
-
-$link = mysqli_connect($servername, $username, $password, $dbName);
-
-if (!$link) {
-    die("Ошибка подключения к базе данных: " . mysqli_connect_error());
-}
+mysqli_select_db($link, $dbName);
 
 $sql = "CREATE TABLE IF NOT EXISTS users (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -46,4 +39,3 @@ if (!mysqli_query($link, $sql)) {
 }
 
 mysqli_close($link);
-?>
