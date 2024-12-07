@@ -1,3 +1,9 @@
+<?php
+if (!isset($_COOKIE['User'])) {
+    echo '<p><a href="/register_user.php">Зарегистрируйтесь</a> или <a href="/login_user.php">войдите</a>, чтобы просматривать контент!</p>';
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -15,7 +21,7 @@
 
     <div id="home" class="page">
         <div class="content">
-            <h1>Здравствуйте! Меня зовут Печень И.</h1>
+            <h1>Здравствуйте! Меня зовут </h1>
             <p>Я являюсь IT-специалистом с многолетним опытом работы в веб-разработке, сетевой безопасности и аналитике данных.</p>
             <img src="image/photo.jpeg" alt="Фотография специалиста">
         </div>
@@ -42,7 +48,8 @@
         </div>
     </div>
 
-    <!-- Include JavaScript here -->
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
+

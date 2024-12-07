@@ -5,16 +5,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    
     $conn = new mysqli($servername, $username, $password, $dbName);
     if ($conn->connect_error) {
         die("Ошибка подключения: " . $conn->connect_error);
     }
 
-    
     $username = $conn->real_escape_string($username);
 
-    
     $sql = "SELECT password FROM users WHERE username='$username'";
     $result = $conn->query($sql);
 

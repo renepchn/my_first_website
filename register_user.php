@@ -3,20 +3,19 @@ require_once('db.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); 
 
-        $conn = new mysqli($servername, $username, $password, $dbName);
+    $conn = new mysqli($servername, $username, $password, $dbName);
     if ($conn->connect_error) {
         die("Ошибка подключения: " . $conn->connect_error);
     }
 
-    
     $username = $conn->real_escape_string($username);
 
-   
+    
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     if ($conn->query($sql) === TRUE) {
-        header("Location: login.php"); 
+        header("Location: login_user.php"); 
         exit();
     } else {
         echo "Ошибка: " . $conn->error;
